@@ -11,6 +11,9 @@ from datetime import date
 import re
 import json
 
+#https://hotel.tutu.ru/
+#20 records_per_page
+#lenta
 
 class Website:
     def __init__(self, base_url: str, hotels_per_page: int, page_token: str):
@@ -122,7 +125,7 @@ class Parser:
         print(website.base_url)
     
     def get_hotel_urls(website: TravelYandex, dest: str, checkin: date, checkout: date):
-        print(website.base_url)gjhg
+        print(website.base_url)
 
 
 sites = [Booking(), TravelYandex()]
@@ -130,3 +133,24 @@ sites = [Booking(), TravelYandex()]
 
 for i in sites:
     Parser.get_hotel_urls(i, 'asd', date(2022,1,1), date(2022,1,1))
+
+
+
+
+
+
+
+class Parser2:
+    def parse(city, checkin, checkout):
+        pass
+
+class BookingParser(Parser2):
+    pass
+
+class YandexParser(Parser2):
+    pass
+
+Parsers = [BookingParser(), YandexParser()]
+
+for p in Parsers:
+    list = p.parse(1, 1, 1)
